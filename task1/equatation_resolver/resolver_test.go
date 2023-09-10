@@ -17,7 +17,7 @@ type resolveEquationTest struct {
 func TestSolveCubic(t *testing.T) {
 	epsilon := 1e-6
 	resolver := &DichotomyMethod{
-		epsilon: epsilon,
+		Epsilon: epsilon,
 	}
 
 	testCases := []struct {
@@ -31,6 +31,7 @@ func TestSolveCubic(t *testing.T) {
 		{[]float64{-6.0, 11.0, -6.0, 1.0}, []float64{1.0, 2.0, 3.0}},
 		{[]float64{-6.0, -7.0, 0.0, 1.0}, []float64{-2.0, -1.0, 3.0}},
 		{[]float64{0.0, 0.0, 0.0, 3.0}, []float64{0.0}},
+		{[]float64{0.0, 1.0, 2.0, 3.0}, []float64{0.0}},
 		{[]float64{1.0, 1.0, 1.0, 1.0}, []float64{-1.0}},
 		{[]float64{0.0, 12.0, 0.0, -10.0}, []float64{-1.095445, 0.0, 1.095445}},
 
@@ -45,7 +46,7 @@ func TestSolveCubic(t *testing.T) {
 		}
 
 		t.Run("Positive tests cubic resolver", func(t *testing.T) {
-			solutions, _ := resolver.resolve(p)
+			solutions, _ := resolver.Resolve(p)
 			sort.Float64s(solutions)
 			sort.Float64s(tc.solutions)
 

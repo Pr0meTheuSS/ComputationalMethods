@@ -15,14 +15,14 @@ type Interval struct {
 
 type EquatationResolverInterface interface {
 	// Method resolve polynomial 3rd order-equatation.
-	resolve(p polynomial.Polynomial) ([]float64, error)
+	Resolve(p polynomial.Polynomial) ([]float64, error)
 }
 
 type DichotomyMethod struct {
-	epsilon float64
+	Epsilon float64
 }
 
-func (d *DichotomyMethod) resolve(polynomial polynomial.Polynomial) ([]float64, error) {
+func (d *DichotomyMethod) Resolve(polynomial polynomial.Polynomial) ([]float64, error) {
 	log.Printf("eq order: %d\n", polynomial.GetPolynomialOrder())
 	switch polynomial.GetPolynomialOrder() {
 	case 1:
@@ -52,7 +52,7 @@ func (d *DichotomyMethod) resolveCubicEquatation(polynomial polynomial.Polynomia
 		}
 	}
 
-	roots = collapseCloseRoots(roots, d.epsilon)
+	roots = collapseCloseRoots(roots, d.Epsilon)
 	return roots, nil
 
 }
@@ -120,7 +120,7 @@ func (d *DichotomyMethod) binarySearch(polynomial polynomial.Polynomial, interva
 		}
 	}
 
-	if math.Abs(polynomial.CalcValue(interval.left)) <= d.epsilon {
+	if math.Abs(polynomial.CalcValue(interval.left)) <= d.Epsilon {
 		roots = append(roots, interval.left)
 	}
 
