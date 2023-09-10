@@ -1,0 +1,13 @@
+mode: set
+task1/polynomial/polynomial.go:11.60,13.47 2 1
+task1/polynomial/polynomial.go:13.47,16.3 2 1
+task1/polynomial/polynomial.go:18.2,20.3 1 1
+task1/polynomial/polynomial.go:24.59,26.35 2 1
+task1/polynomial/polynomial.go:26.35,27.13 1 1
+task1/polynomial/polynomial.go:27.13,29.4 1 1
+task1/polynomial/polynomial.go:29.9,31.4 1 1
+task1/polynomial/polynomial.go:34.2,34.13 1 1
+task1/polynomial/polynomial.go:37.47,39.2 1 1
+task1/polynomial/polynomial.go:41.45,45.35 3 1
+task1/polynomial/polynomial.go:45.35,47.3 1 1
+task1/polynomial/polynomial.go:49.2,49.15 1 1
