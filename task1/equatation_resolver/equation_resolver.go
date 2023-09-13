@@ -54,7 +54,6 @@ func (d *DichotomyMethod) resolveCubicEquatation(polynomial polynomial.Polynomia
 
 	roots = collapseCloseRoots(roots, d.Epsilon)
 	return roots, nil
-
 }
 
 func collapseCloseRoots(roots []float64, distance float64) []float64 {

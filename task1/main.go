@@ -2,16 +2,19 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"task1/equatation_resolver"
 	"task1/polynomial"
 )
 
 func main() {
-	// Запросить ввод выражения (полинома) от пользователя
-	fmt.Print("Введите коэффициенты полинома от меньшей степени параметра к большей: \n")
+	fmt.Print("Введите коэффициенты полинома 3-его порядка от меньшей степени параметра к большей: \n")
+
 	coefficients := make([]float64, 4)
-	fmt.Scan(&coefficients[0], &coefficients[1], &coefficients[2], &coefficients[3])
+	if _, err := fmt.Scan(&coefficients[0], &coefficients[1], &coefficients[2], &coefficients[3]); err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Println("Коэффициенты полинома:", coefficients)
 
@@ -31,5 +34,4 @@ func main() {
 	}
 
 	fmt.Println("Корни уравнения: ", roots)
-
 }
