@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"image/color"
+	"log"
 	"main/interpolator"
 	"math"
 
@@ -20,18 +22,29 @@ type Interval struct {
 	right float64
 }
 
-const (
-	nodesAmount = 2
-)
-
 func main() {
 	nodes := []interpolator.Node{}
 	interval := Interval{
 		left:  1.0,
 		right: 4.0,
 	}
+	fmt.Println("Enter [a,b] like two numbers:")
+	if _, err := fmt.Scan(&interval.left, &interval.right); err != nil {
+		log.Fatal("Invalid input")
+	}
+	nodesAmount := 0
+	fmt.Println("Enter nodes amount:")
+	if _, err := fmt.Scan(&nodesAmount); err != nil {
+		log.Fatal("Invalid input")
+	}
 
-	step := (interval.right - interval.left) / nodesAmount
+	errorPointX := interval.left
+	fmt.Println("Error point (x):")
+	if _, err := fmt.Scan(&errorPointX); err != nil {
+		log.Fatal("Invalid input")
+	}
+
+	step := (interval.right - interval.left) / float64(nodesAmount)
 	currentX := interval.left
 	for i := 0; i <= nodesAmount; i++ {
 		nodes = append(nodes, interpolator.Node{X: currentX, Y: originalFunction(currentX)})
@@ -49,10 +62,11 @@ func main() {
 
 	p.Add(originalFuncGraph)
 	p.Legend.Add("lg(x)+7/(2x+6)", originalFuncGraph)
+
 	p.X.Min = interval.left
 	p.X.Max = interval.right
-	p.Y.Min = 0
-	p.Y.Max = 3
+	p.Y.Min = originalFunction(p.X.Min)
+	p.Y.Max = originalFunction(p.X.Max)
 
 	interpolator := interpolator.LagrangeInterpolator{}
 
@@ -71,4 +85,7 @@ func main() {
 	if err := p.Save(4*vg.Inch, 4*vg.Inch, "lab2.png"); err != nil {
 		panic(err)
 	}
+
+	diff := originalFunction(errorPointX) - interpolator.CalcPolynomialValue(errorPointX, nodes)
+	fmt.Printf("(function(x) - interpolator(x))^2 %f: %f\n", errorPointX, diff*diff)
 }
