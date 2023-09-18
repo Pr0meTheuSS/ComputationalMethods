@@ -14,6 +14,9 @@ import (
 
 // lg(x) + 7 / (2x + 6)
 func originalFunction(x float64) float64 {
+	if x <= 0 {
+		log.Fatal("Invalid function param")
+	}
 	return math.Log(x) + 7/(2*x+6)
 }
 
@@ -68,7 +71,7 @@ func main() {
 	p.Y.Min = originalFunction(p.X.Min)
 	p.Y.Max = originalFunction(p.X.Max)
 
-	interpolator := interpolator.LagrangeInterpolator{}
+	var interpolator interpolator.InterpolatorInterface = interpolator.LagrangeInterpolator{}
 
 	interpolarResultGraph := plotter.NewFunction(func(x float64) float64 {
 		return interpolator.CalcPolynomialValue(x, nodes)

@@ -7,13 +7,13 @@ type Node struct {
 }
 
 type InterpolatorInterface interface {
-	CalcPolynomialValue(nodes []Node) float64
+	CalcPolynomialValue(x float64, nodes []Node) float64
 }
 
 type LagrangeInterpolator struct{}
 
-// CalcPolynomialCoefficients вычисляет коэффициенты полинома Лагранжа для заданных узлов.
-func (li *LagrangeInterpolator) CalcPolynomialValue(x float64, nodes []Node) float64 {
+// Вычисляет значения полинома Лагранжа для заданного значения и заданных узлов.
+func (li LagrangeInterpolator) CalcPolynomialValue(x float64, nodes []Node) float64 {
 	n := len(nodes)
 	result := 0.0
 
@@ -22,24 +22,6 @@ func (li *LagrangeInterpolator) CalcPolynomialValue(x float64, nodes []Node) flo
 		for j := 0; j < n; j++ {
 			if i != j {
 				term *= (x - nodes[j].X) / (nodes[i].X - nodes[j].X)
-			}
-		}
-		result += term
-	}
-
-	return result
-}
-
-// LagrangeInterpolation вычисляет значение полинома Лагранжа в точке x.
-func LagrangeInterpolation(xNodes []float64, yNodes []float64, x float64) float64 {
-	n := len(xNodes)
-	result := 0.0
-
-	for i := 0; i < n; i++ {
-		term := yNodes[i]
-		for j := 0; j < n; j++ {
-			if i != j {
-				term *= (x - xNodes[j]) / (xNodes[i] - xNodes[j])
 			}
 		}
 		result += term
