@@ -3,21 +3,31 @@ package main
 import (
 	"fmt"
 	"log"
-	"main/functionparser"
 	"main/integrator"
 	"main/interval"
+	"math"
 )
 
-func main() {
-	var functionExpr string
-	if _, err := fmt.Scan(&functionExpr); err != nil {
-		log.Fatal("Wrong input. Expected expression with function for integraton.\n For example: sin(x), ln(x + 12x^2)\n")
-	}
+/* TODO:
+ *
+- implement other integration methods.
+- write tests.
+- add accuracy verification.
+- add function expression parser.
+*
+*/
 
-	function, err := functionparser.ParseFunction(functionExpr)
-	if err != nil {
-		log.Fatalf("Function expression parser failed with error: %s\n", err.Error())
-	}
+func main() {
+	// var functionExpr string
+	// if _, err := fmt.Scan(&functionExpr); err != nil {
+	// 	log.Fatal("Wrong input. Expected expression with function for integraton.\n For example: sin(x), ln(x + 12x^2)\n")
+	// }
+
+	function := func(x float64) float64 { return math.Exp(x) * math.Cos(x) }
+	// function, err := functionparser.ParseFunction(functionExpr)
+	// if err != nil {
+	// 	log.Fatalf("Function expression parser failed with error: %s\n", err.Error())
+	// }
 
 	fmt.Println("Enter interval for integration (two numbers - left and right bounds):")
 	interval := interval.Interval{}
