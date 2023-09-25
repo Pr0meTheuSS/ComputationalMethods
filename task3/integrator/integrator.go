@@ -8,13 +8,11 @@ type Integrator interface {
 
 func IntegratorFactory(methodName string) Integrator {
 	switch methodName {
-	case "rectangle":
-		return rectangleResolver{}
 	case "trapezoid":
-		panic("Implement me")
+		return trapezoidResolver{}
 	case "simpson":
-		panic("Implement me")
+		return simpsonResolver{}
 	default:
-		return rectangleResolver{}
+		return trapezoidResolver{}
 	}
 }

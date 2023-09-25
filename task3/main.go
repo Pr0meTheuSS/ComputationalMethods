@@ -10,9 +10,7 @@ import (
 
 /* TODO:
  *
-- implement other integration methods.
 - write tests.
-- add accuracy verification.
 - add function expression parser.
 *
 */
@@ -41,7 +39,7 @@ func main() {
 		log.Fatal("Wrong input. Expected expression with one float value.\n For example: 0.001\n")
 	}
 
-	resolver := integrator.IntegratorFactory("method")
+	resolver := integrator.IntegratorFactory("simpson")
 
 	result, err := resolver.Integrate(function, interval, accuracy)
 	if err != nil {
