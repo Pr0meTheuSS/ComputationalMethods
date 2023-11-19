@@ -2,7 +2,6 @@ package conjugate
 
 import (
 	"errors"
-	"fmt"
 
 	"gonum.org/v1/gonum/mat"
 )
@@ -40,7 +39,7 @@ func (solver *ConjugateGradientSolver) Resolve(A mat.Matrix, b mat.Vector) (mat.
 	rsold := mat.Dot(r, r)
 
 	for k := 0; k < solver.MaxIterations; k++ {
-		fmt.Println(k)
+		// fmt.Println(k)
 		alpha := rsold / mat.Dot(p, p)
 		x.AddScaledVec(x, alpha, p)
 

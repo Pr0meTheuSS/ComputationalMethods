@@ -61,7 +61,7 @@ var positiveTestCasesLU = []struct {
 	},
 }
 
-// Матрицы с вырожденным ушловым минором.
+// Матрицы с вырожденным узловым минором.
 var negativeTestCasesLU = []struct {
 	A         *mat.Dense
 	b         *mat.VecDense
@@ -166,11 +166,9 @@ var positiveTestCasesQR = []struct {
 			0, 1, 2,
 			1, 0, 1,
 			2, 1, 0}),
-
 		b:         mat.NewVecDense(3, []float64{1, 2, 2}),
 		expectedX: mat.NewVecDense(3, []float64{1, 0, 1}),
 	},
-
 }
 
 func TestSolveLinearEquationsByQR(t *testing.T) {
@@ -278,17 +276,9 @@ var positiveTestCasesTrig = []struct {
 		b:         mat.NewVecDense(3, []float64{1, 1, 1}),
 		expectedX: mat.NewVecDense(3, []float64{4.0 / 23, 3.0 / 23, 4.0 / 23}),
 	},
-	{
-		A: mat.NewDense(3, 3, []float64{
-			1, 1.0 / 2, 1.0 / 3,
-			1.0 / 2, 1.0 / 3, 1.0 / 4,
-			1.0 / 3, 1.0 / 4, 1.0 / 5}),
-
-		b:         mat.NewVecDense(3, []float64{1, 1, 1}),
-		expectedX: mat.NewVecDense(3, []float64{3, -24, 30}),
-	},
 }
 
+// TODO: методом прогонки построение кубического сплайна.
 func TestSolveLinearEquationsByTrig(t *testing.T) {
 	for _, testCase := range positiveTestCasesTrig {
 		var f factory.SLAEResolverFactory = factory.SLAEResolverFactoryImpl{}
@@ -316,6 +306,15 @@ var positiveTestCasesCG = []struct {
 		A:         mat.NewDense(2, 2, []float64{2, -1, -1, 2}),
 		b:         mat.NewVecDense(2, []float64{2, 2}),
 		expectedX: mat.NewVecDense(2, []float64{2, 2}),
+	},
+	{
+		A: mat.NewDense(3, 3, []float64{
+			1, 1.0 / 2, 1.0 / 3,
+			1.0 / 2, 1.0 / 3, 1.0 / 4,
+			1.0 / 3, 1.0 / 4, 1.0 / 5}),
+
+		b:         mat.NewVecDense(3, []float64{1, 1, 1}),
+		expectedX: mat.NewVecDense(3, []float64{3, -24, 30}),
 	},
 }
 

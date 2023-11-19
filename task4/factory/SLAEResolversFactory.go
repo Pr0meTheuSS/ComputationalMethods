@@ -31,9 +31,9 @@ func (rf SLAEResolverFactoryImpl) Create(resolvingMethodName string) slaeresolve
 	case "QR", "qr":
 		return qr.NewQRResolver()
 	case "J", "j", "Jacobi", "jacobi", "jac":
-		return jacobi.NewJacobiResolver(10e6, 1e-18)
+		return jacobi.NewJacobiResolver(10e3, 1e-9)
 	case "con", "conjugate", "grad", "conjugate gradients":
-		return conjugate.NewConjugateGradientSolver(1e6, 1e-6)
+		return conjugate.NewConjugateGradientSolver(1e3, 1e-6)
 	default:
 		return nil
 	}
