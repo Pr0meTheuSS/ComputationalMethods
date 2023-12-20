@@ -148,48 +148,48 @@ func main() {
 	// }
 
 	// // Метод секущих для x-a = log(x + 1)
-	resultSecant, errSecant := secantMethod(a, f1, 0, a*a)
-	if errSecant != nil {
-		fmt.Println(errSecant)
-	} else {
-		fmt.Printf("Метод секущих: x = %.6f\n", resultSecant)
-	}
+	// resultSecant, errSecant := secantMethod(a, f1, 0, a*a)
+	// if errSecant != nil {
+	// 	fmt.Println(errSecant)
+	// } else {
+	// 	fmt.Printf("Метод секущих: x = %.6f\n", resultSecant)
+	// }
 
-	// Метод секущих для x-a = log(x + 1)
-	resultSecant, errSecant = secantMethod(a, rev_f1, -a*a, 0)
-	if errSecant != nil {
-		fmt.Println(errSecant)
-	} else {
-		fmt.Printf("Метод секущих: x = %.6f\n", resultSecant)
-	}
+	// // Метод секущих для x-a = log(x + 1)
+	// resultSecant, errSecant = secantMethod(a, rev_f1, -a*a, 0)
+	// if errSecant != nil {
+	// 	fmt.Println(errSecant)
+	// } else {
+	// 	fmt.Printf("Метод секущих: x = %.6f\n", resultSecant)
+	// }
 
 	// Метод простой итерации для x = l*sin(x)
 	// Разбиваем весь интервал,
 	// где возможно пересечение линейной функции с синусойидой,
 	// на участки монотонности.
-	// monotonicityIntervals := generateSubIntervalsAboutZero(a)
+	monotonicityIntervals := generateSubIntervalsAboutZero(a)
 
-	// // интервал, содержащий 0.
-	// center := len(monotonicityIntervals) / 2
-	// for i, m := range monotonicityIntervals {
-	// 	fmt.Println(m)
-	// 	// Обработка прямой функции
-	// 	resultSimple, errSimple := secantMethod(a, func(x, a float64) float64 { return a*math.Sin(x) - x }, m.left, m.right)
-	// 	if errSimple != nil {
-	// 		fmt.Println(errSimple)
-	// 	} else {
-	// 		fmt.Printf("Метод секущих: x = %.6f\n", resultSimple)
-	// 	}
+	// интервал, содержащий 0.
+	center := len(monotonicityIntervals) / 2
+	for i, m := range monotonicityIntervals {
+		fmt.Println(m)
+		// Обработка прямой функции
+		resultSimple, errSimple := secantMethod(a, func(x, a float64) float64 { return a*math.Sin(x) - x }, m.left, m.right)
+		if errSimple != nil {
+			fmt.Println(errSimple)
+		} else {
+			fmt.Printf("Метод секущих: x = %.6f\n", resultSimple)
+		}
 
-	// 	// Обработка обратной функции
-	// 	period := float64((i - center)) * math.Pi
-	// 	fmt.Println(period)
-	// 	// resultSimple, errSimple = secantMethod(a, func(x, a float64) float64 { return -math.Asin(x/a) + period }, m.left, m.right)
-	// 	resultSimple, errSimple = NewtonMethod(a, func(x, a float64) float64 { return -math.Asin(x/a) + period }, func(x, a float64) float64 { return -1.0 / (a * math.Sqrt(1.0-(x/a)*(x/a))) }, m.right)
-	// 	if errSimple != nil {
-	// 		fmt.Println(errSimple)
-	// 	} else {
-	// 		fmt.Printf("Метод секущих для обратной функции: x = %.6f\n", resultSimple)
-	// 	}
-	// }
+		// Обработка обратной функции
+		period := float64((i - center)) * math.Pi
+		fmt.Println(period)
+		// resultSimple, errSimple = secantMethod(a, func(x, a float64) float64 { return -math.Asin(x/a) + period }, m.left, m.right)
+		resultSimple, errSimple = NewtonMethod(a, func(x, a float64) float64 { return -math.Asin(x/a) + period }, func(x, a float64) float64 { return -1.0 / (a * math.Sqrt(1.0-(x/a)*(x/a))) }, m.right)
+		if errSimple != nil {
+			fmt.Println(errSimple)
+		} else {
+			fmt.Printf("Метод секущих для обратной функции: x = %.6f\n", resultSimple)
+		}
+	}
 }
