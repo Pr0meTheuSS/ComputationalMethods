@@ -660,3 +660,82 @@
 2023-10-23T09:47:57.815+0700	info	QR resolver finished separation A to Q * R.=====================
 2023-10-23T09:47:57.815+0700	info	=====================QR resolver method was called.
 2023-10-23T09:47:57.815+0700	info	QR resolver was finished.=====================
+2023-10-23T11:02:33.908+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.917+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.917+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.917+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.917+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.917+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.917+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.917+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.917+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.917+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.917+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.917+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.918+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.918+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.918+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.918+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.918+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.918+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.918+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.918+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.918+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver method was called.
+2023-10-23T11:02:33.918+0700	info	LU resolver was finished.=====================
+2023-10-23T11:02:33.918+0700	info	=====================LU resolver called method LU to separate A like L*U.
+2023-10-23T11:02:33.919+0700	error	it is impossible to perform lu decomposition of this matrix. One of the corner minors is equal 0.
+2023-10-23T11:02:33.919+0700	info	LU resolver finished separation A to L*U.=====================
+2023-10-23T11:04:42.460+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.460+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.460+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.460+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.460+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.460+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.460+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.460+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.460+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.460+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.460+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.461+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.461+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.461+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.461+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.461+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.461+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.461+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.461+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.461+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.461+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.461+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.461+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.461+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.462+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.462+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.462+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.462+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.462+0700	info	QR resolver was finished.=====================
+2023-10-23T11:04:42.462+0700	info	=====================QR resolver called method QR to separate A like Q * R.
+2023-10-23T11:04:42.462+0700	info	QR resolver finished separation A to Q * R.=====================
+2023-10-23T11:04:42.462+0700	info	=====================QR resolver method was called.
+2023-10-23T11:04:42.462+0700	info	QR resolver was finished.=====================
